@@ -10,16 +10,18 @@ public class Game {
 	public ArrayList<Character> entities;
 	private RandomGenerator random;
 	public static int size = 51;
-	public static int nbrEnnemy = 82;
+	public static int nbrEnemy = 82;
 	Random ran = new Random();
 	
 	public Game(Window window){
 		this.window = window;
 		this.entities = new ArrayList<Character>();
 		this.entities.add(new Player(5,5,1));
-		for(int i = 0;i<nbrEnnemy;i++){
-			this.entities.add(new Ennemy(ran.nextInt(50),ran.nextInt(50),1));
+		for(int i = 0;i<nbrEnemy;i++){
+			this.entities.add(new Ennemy(ran.nextInt(size-1),ran.nextInt(size-1),1));
 		}
+		Thread t = new Thread(new MobAI(this));
+		t.start();
 		window.draw(this.getMap());
 	}
 
@@ -60,7 +62,7 @@ public class Game {
 		
 		map[4][5] = -2;
 		
-		for(int i=1;i<nbrEnnemy+1;i++){
+		for(int i=1;i<nbrEnemy+1;i++){
 			map[this.entities.get(i).getX()][this.entities.get(i).getY()] = -3;
 		}
 		
@@ -74,5 +76,4 @@ public class Game {
 		}
 		return map;
 	}
-	
-}
+	}

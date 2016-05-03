@@ -10,6 +10,10 @@ public class MobAI implements Runnable{
 	private int WaitTime=1000;
 	private Game game;
 	
+	public MobAI(Game game){
+		this.game = game;
+	}
+	
 	
 	
 	public int getX(){
@@ -60,20 +64,19 @@ public class MobAI implements Runnable{
 	public void run(){
 		try{
 			while(true){
-				for(int i=1;i<Game.nbrEnnemy+1;i++){
+				
+				for(int i=1;i<Game.nbrEnemy+1;i++){
 					int n = RandomGenerator.randInt(0,4);
 					Direction(n);
 					game.moveCharacter(stepX, stepY, i);
 				}
-				Thread.sleep(1000);
+				Thread.sleep(700);
 			}
 		}catch(Exception e){};
 		
 	}
-	public static void main(String[] args) {
-	Thread t = new Thread(new MobAI());
-	t.start();
-	}
+
+
 }
 	
 	
