@@ -1,8 +1,8 @@
 import Controller.Keyboard;
 import Model.Game;
-import Model.MobAI;
 import View.Window;
 
+// Fichier main qui crée une fenêtre, charge le jeu, l'affiche et permet des interactions avec le clavier
 public class Main {
 	public static void main(String[] args) {
 		
@@ -11,5 +11,5 @@ public class Main {
 		Keyboard keyboard = new Keyboard(game);
 		window.setKeyListener(keyboard);
 		
-	}
+		}
 }

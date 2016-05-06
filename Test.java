@@ -7,6 +7,9 @@ import java.util.List;
 
 import javax.swing.*;
 
+
+// A SUPPRIMER, CAR N'A RIEN A VOIR AVEC LE JEU
+
 public class Test extends JFrame {
    public Test() {
       super("Game Frame");

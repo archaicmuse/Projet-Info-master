@@ -1,5 +1,7 @@
 package Model;
 
+// CLASSE A SUPPRIMER CAR REMPLACEE PAR MOBAI
+
 public class EnemyMove {
 	private int posX;
 	private int posY;

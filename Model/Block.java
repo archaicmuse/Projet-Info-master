@@ -1,5 +1,7 @@
 package Model;
 
+// Classe bloc possédant une coordonné X et Y sur la carte
+
 public class Block {
 	private int posX;
 	private int posY;
@@ -9,11 +11,11 @@ public class Block {
 		this.posY = Y;
 	}
 	
-	public int getPosX(){
+	public int getX(){
 		return this.posX;
 	}
 	
-	public int getPosY(){
+	public int getY(){
 		return this.posY;
 	}
 }

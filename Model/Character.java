@@ -1,19 +1,18 @@
 package Model;
 
+// Super classe personnage
+
 public class Character {
 	private int posX;
 	private int posY;
 	private int HP;
 	private int attackStatus;
-	private String attackDirection;
 	
 	public Character(int X, int Y, int firstHP){
 		this.posX = X;
 		this.posY = Y;
 		this.HP = firstHP;
 		this.attackStatus = 0;
-
-		
 	}
 	
 	public int getX(){
@@ -41,19 +40,24 @@ public class Character {
 	public void move(int stepX, int stepY){
 		this.posX += stepX;
 		this.posY += stepY;
-		System.out.println(posX + "-" + posY);
 	}
 	
 	public void setHP(int newHP){
-		this.HP = newHP;
+		if(newHP>-1&&newHP<11){
+			this.HP = newHP;
+		}else if(newHP>10){
+			this.HP = 10;
+		}
 	}
 	
-	public void modHP(int stepHP){
-		this.HP += stepHP;
-	}
 	
 	public void setAttackStatus(int newStatus){
 		this.attackStatus = newStatus;
+	}
+	
+	public void setPosition(int newX, int newY){
+		this.posX = newX;
+		this.posY = newY;
 	}
 
 
